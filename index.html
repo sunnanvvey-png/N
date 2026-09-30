@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PROJECT NITIKA</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #030308;
+    color: white;
+    font-family: monospace;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(#00ffff12 1px, transparent 1px),
+        linear-gradient(90deg, #00ffff12 1px, transparent 1px);
+
+    background-size: 35px 35px;
+}
+
+.container {
+    width: 90%;
+    max-width: 430px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.system {
+    color: #00ffff;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.title {
+    margin-top: 25px;
+    font-size: 28px;
+    text-shadow: 0 0 20px #00ffff;
+}
+
+.stage {
+    margin-top: 20px;
+    color: #ff66dd;
+    letter-spacing: 3px;
+}
+
+.lock {
+    margin: 35px auto 20px;
+    font-size: 65px;
+    text-shadow: 0 0 25px #00ffff;
+}
+
+.message {
+    color: #aaa;
+    font-size: 13px;
+}
+
+input {
+    margin-top: 25px;
+    width: 180px;
+    padding: 15px;
+
+    background: #ffffff08;
+    border: 1px solid #00ffff66;
+    border-radius: 8px;
+
+    color: #00ffff;
+    text-align: center;
+    font-family: monospace;
+    font-size: 22px;
+    letter-spacing: 8px;
+    outline: none;
+}
+
+button {
+    display: block;
+    margin: 20px auto 0;
+
+    padding: 14px 28px;
+
+    background: #00ffff0d;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+
+    color: #00ffff;
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+
+#result {
+    margin-top: 20px;
+    min-height: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="system">
+        BHIRTHDAY // SECURITY
+    </div>
+
+    <div class="title">
+        STAGE 02
+    </div>
+
+    <div class="stage">
+        DIGITAL UNLOCK
+    </div>
+
+    <div class="lock">
+        🔐
+    </div>
+
+    <div class="message">
+        ENTER THE SECRET 4-DIGIT CODE
+    </div>
+
+    <input
+        id="pin"
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        placeholder="••••"
+    >
+
+    <button onclick="unlock()">
+        UNLOCK →
+    </button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function unlock() {
+
+    const pin = document.getElementById("pin").value;
+    const result = document.getElementById("result");
+
+    /*
+      Secret code:
+      1015
+    */
+
+    if (pin === "1015") {
+
+        result.style.color = "#00ff99";
+        result.innerHTML = "ACCESS GRANTED ✓";
+
+        setTimeout(() => {
+
+window.location.href = "message.html";
+            document.body.innerHTML = `
+                <div style="
+                    text-align:center;
+                    font-family:monospace;
+                    padding:25px;
+                    color:white;
+                ">
+
+                    <div style="
+                        color:#00ffff;
+                        letter-spacing:3px;
+                    ">
+                        STAGE 02 COMPLETE
+                    </div>
+
+                    <h1 style="
+                        margin-top:30px;
+                        text-shadow:0 0 25px #00ffff;
+                    ">
+                        ACCESS GRANTED ✨
+                    </h1>
+
+                    <p style="
+                        color:#ff66dd;
+                        font-size:20px;
+                    ">
+                        NEXT STAGE UNLOCKED 💗
+                    </p>
+
+                </div>
+            `;
+
+        }, 700);
+
+    } else {
+
+        result.style.color = "#ff3366";
+        result.innerHTML = "ACCESS DENIED ✕";
+
+    }
+}
+
+</script>
+
+</body>
+</html>

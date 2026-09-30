@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Message</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 30px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at center, #301344, #05050b 70%);
+
+    color: white;
+    font-family: monospace;
+}
+
+.card {
+    width: 100%;
+    max-width: 430px;
+
+    padding: 30px 22px;
+
+    border: 1px solid #ff66dd55;
+    border-radius: 24px;
+
+    background: #ffffff09;
+
+    box-shadow:
+        0 0 35px #ff66dd33,
+        inset 0 0 20px #ffffff08;
+
+    text-align: center;
+}
+
+.system {
+    color: #00ffff;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin-top: 25px;
+
+    font-size: 28px;
+
+    color: #ff9bea;
+
+    text-shadow:
+        0 0 10px #ff66dd,
+        0 0 25px #ff66dd;
+}
+
+.name {
+    margin-top: 15px;
+
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.message {
+    margin-top: 30px;
+
+    text-align: left;
+
+    font-family: Arial, sans-serif;
+
+    line-height: 1.7;
+    font-size: 15px;
+
+    color: #eeeeee;
+}
+
+.cursor {
+    display: inline-block;
+
+    width: 8px;
+    height: 18px;
+
+    margin-left: 3px;
+
+    background: #ff66dd;
+
+    animation: blink .7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.mode {
+    margin-top: 30px;
+
+    padding: 12px;
+
+    border: 1px solid #ff66dd44;
+    border-radius: 12px;
+
+    color: #ff9bea;
+
+    letter-spacing: 2px;
+}
+
+.developer {
+    margin-top: 25px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    opacity: .45;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="system">
+        STAGE 03 // MESSAGE UNLOCKED
+    </div>
+
+    <h1>
+        HAPPIEST BIRTHDAY 💝
+    </h1>
+
+    <div class="name">
+        MY DEAR QUEEN WIFEY 👑
+    </div>
+
+    <div class="message">
+        <span id="typing"></span><span class="cursor"></span>
+    </div>
+
+    <div class="mode">
+        SMILE MODE: ON 😊
+    </div>
+<button onclick="finalMode()">
+    ENTER FINAL MODE →
+</button>
+    <div class="developer">
+        Developer Name — Your Hubby Sun
+    </div>
+
+</div>
+
+<script>
+
+const text = `Dear Wifey 💗,
+
+Today is a special day because it is the day you were born.
+
+Nitika Baghel, I hope this new chapter of your life brings you lots of happiness, beautiful memories, peaceful moments and countless reasons to smile.
+
+Keep smiling, keep being yourself, and never forget how special you are.
+
+May your dreams become bigger, your happiness become brighter, and every new day bring something beautiful into your life.
+
+Once again, Happiest Birthday My Dear Queen Wifey 💝🎂
+
+— Your Hubby Sun`;
+
+let i = 0;
+
+function typeText() {
+
+    if (i < text.length) {
+
+        document.getElementById("typing").textContent += text.charAt(i);
+
+        i++;
+
+        setTimeout(typeText, 35);
+
+    }
+}
+
+typeText();
+
+</script>
+<script>
+function finalMode() {
+
+    document.body.style.transition = "opacity 0.7s";
+    document.body.style.opacity = "0";
+
+    setTimeout(() => {
+
+        document.body.innerHTML = `
+            <div style="
+                width:100%;
+                min-height:100vh;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                text-align:center;
+                font-family:monospace;
+                background:
+                radial-gradient(circle,#351047,#05050b 70%);
+                color:white;
+                padding:25px;
+            ">
+
+                <div>
+
+                    <div style="
+                        color:#00ffff;
+                        font-size:11px;
+                        letter-spacing:4px;
+                    ">
+                        FINAL SYSTEM // ONLINE
+                    </div>
+
+                    <div style="
+                        font-size:65px;
+                        margin:25px 0;
+                        animation:pulse 1.5s infinite;
+                    ">
+                        👑
+                    </div>
+
+                    <h1 style="
+                        font-size:34px;
+                        color:#ff9bea;
+                        text-shadow:
+                        0 0 10px #ff66dd,
+                        0 0 30px #ff66dd;
+                    ">
+                        QUEEN MODE
+                    </h1>
+
+                    <h2>
+                        NITIKA BAGHEL
+                    </h2>
+
+                    <p style="
+                        letter-spacing:4px;
+                        opacity:.65;
+                    ">
+                        10 • 10 • 2010
+                    </p>
+
+                    <p style="
+                        margin-top:30px;
+                        color:#00ffff;
+                        letter-spacing:2px;
+                    ">
+                        SMILE MODE: ALWAYS ON 😊
+                    </p>
+
+                    <p style="
+                        margin-top:35px;
+                        font-size:11px;
+                        opacity:.45;
+                    ">
+                        Developer Name — Your Hubby Sun
+                    </p>
+
+                </div>
+
+            </div>
+
+            <style>
+            @keyframes pulse {
+                50% {
+                    transform:scale(1.18);
+                }
+            }
+            </style>
+        `;
+
+        document.body.style.opacity = "1";
+
+    }, 700);
+}
+</script>
+</body>
+</html>
